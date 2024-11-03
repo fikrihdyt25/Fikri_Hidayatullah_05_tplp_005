@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard|Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="dist/dist.css">
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar" id="sidebar">
+                <button class="btn sidebar-toggle" onclick="toggleSidebar()">
+                    <i class="bi bi-list"></i>
+                </button>
+                <img src="assets/Logo.png" alt="MasFix Logo" class="img-fluid mb-3 mx-auto d-block" style="max-width: 150px;">
+                <h5 class="text-center mb-4 fw-bold">MasFix Data System</h5>
+                <p class="text-center text-white mb-4">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span id="adminName">Welcome,Fikri Hidayatullah</span><br>
+                    <i>Administrator</i>
+                <hr class="border-light">
+                </p>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#adminSubmenu">
+                            <i class="bi bi-person-gear me-2"></i> Menu Admin
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="adminSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="dashboard.html" class="sidebar-link">
+                                        <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                                    </a>
+                                </li><li class="nav-item"></li>
+                                    <a href="index.html" class="sidebar-link">
+                                        <i class="bi bi-speedometer2 me-2"></i> Beranda
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#karyawanSubmenu">
+                            <i class="bi bi-house-door me-2"></i> Menu Karyawan
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="karyawanSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="datakaryawan.html" class="sidebar-link">
+                                        <i class="bi bi-person me-2"></i> Data Karyawan
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pagejabatan.html" class="sidebar-link">
+                                        <i class="bi bi-briefcase me-2"></i> Data Jabatan
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="divisi.html" class="sidebar-link">
+                                        <i class="bi bi-diagram-3 me-2"></i> Data Divisi
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#absensiSubmenu">
+                            <i class="bi bi-people me-2"></i> Menu Absensi
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="absensiSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="dataabsensi.html" class="sidebar-link">
+                                        <i class="bi bi-calendar-check me-2"></i> Data Absensi
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dataizin.html" class="sidebar-link">
+                                        <i class="bi bi-journal-text me-2"></i> Data Izin
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="datalibur.html" class="sidebar-link">
+                                        <i class="bi bi-calendar-x me-2"></i> Data Libur
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#gajiSubmenu">
+                            <i class="bi bi-gear me-2"></i> Menu Gaji Karyawan
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="gajiSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="datagaji.html" class="sidebar-link">
+                                        <i class="bi bi-cash-stack me-2"></i> Data Gaji
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="inputgaji.html" class="sidebar-link">
+                                        <i class="bi bi-pencil-square me-2"></i> Input Gaji
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link active" data-bs-toggle="collapse" data-bs-target="#laporanSubmenu">
+                            <i class="bi bi-file-earmark-text me-2"></i> Laporan
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse show" id="laporanSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="export-excel.html" class="sidebar-link active">
+                                        <i class="bi bi-file-earmark-excel me-2"></i> Ekspor Excel
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="export-pdf.html" class="sidebar-link">
+                                        <i class="bi bi-file-earmark-pdf me-2"></i> Ekspor PDF
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="sidebar-link">
+                            <i class="bi bi-box-arrow-right me-2"></i> Keluar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 ms-sm-auto px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Ekspor Data ke Excel</h1>
+                </div>
+
+                <!-- Form Filter -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form id="exportForm">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Pilih Jenis Data</label>
+                                        <select class="form-select" id="dataType">
+                                            <option value="">Pilih Data</option>
+                                            <option value="karyawan">Data Karyawan</option>
+                                            <option value="absensi">Data Absensi</option>
+                                            <option value="gaji">Data Gaji</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Dari Tanggal</label>
+                                        <input type="date" class="form-control" id="startDate">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Sampai Tanggal</label>
+                                        <input type="date" class="form-control" id="endDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-file-earmark-excel me-2"></i>Ekspor ke Excel
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Preview Data -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Preview Data</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Tanggal</th>
+                                        <th>Nama</th>
+                                        <th>Divisi</th>
+                                        <th>Jabatan</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="previewData">
+                                    <!-- Data akan dimuat secara dinamis -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

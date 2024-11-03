@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard|Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="dist/dist.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar" id="sidebar">
+                <button class="btn sidebar-toggle" onclick="toggleSidebar()">
+                    <i class="bi bi-list"></i>
+                </button>
+                <img src="assets/Logo.png" alt="MasFix Logo" class="img-fluid mb-3 mx-auto d-block" style="max-width: 150px;">
+                <h5 class="text-center mb-4 fw-bold">MasFix Data System</h5>
+                <p class="text-center text-white mb-4">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span id="adminName">Welcome, Fikri Hidayatullah</span><br>
+                    <i>Administrator</i>
+                </p>
+                <hr class="border-light">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#adminSubmenu">
+                            <i class="bi bi-person-gear me-2"></i> Menu Admin
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="adminSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="dashboard.html" class="sidebar-link active">
+                                        <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                                    </a>
+                                    <li class="nav-item">
+                                        <a href="index.html" class="sidebar-link">
+                                            <i class="bi bi-speedometer2 me-2"></i> Beranda
+                                        </a>
+                                    </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#karyawanSubmenu">
+                            <i class="bi bi-house-door me-2"></i> Menu Karyawan
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="karyawanSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="datakaryawan.html" class="sidebar-link">
+                                        <i class="bi bi-person me-2"></i> Data Karyawan
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pagejabatan.html" class="sidebar-link">
+                                        <i class="bi bi-briefcase me-2"></i> Data Jabatan
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="divisi.html" class="sidebar-link">
+                                        <i class="bi bi-diagram-3 me-2"></i> Data Divisi
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#absensiSubmenu">
+                            <i class="bi bi-people me-2"></i> Menu Absensi
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="absensiSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="dataabsensi.html" class="sidebar-link">
+                                        <i class="bi bi-calendar-check me-2"></i> Data Absensi
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dataizin.html" class="sidebar-link">
+                                        <i class="bi bi-journal-text me-2"></i> Data Izin
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="datalibur.html" class="sidebar-link">
+                                        <i class="bi bi-calendar-x me-2"></i> Data Libur
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#gajiSubmenu">
+                            <i class="bi bi-gear me-2"></i> Menu Gaji Karyawan
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="gajiSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="datagaji.html" class="sidebar-link">
+                                        <i class="bi bi-cash-stack me-2"></i> Data Gaji
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="inputgaji.html" class="sidebar-link">
+                                        <i class="bi bi-pencil-square me-2"></i> Input Gaji
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <hr class="border-light">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#laporanSubmenu">
+                            <i class="bi bi-file-earmark-text me-2"></i> Laporan
+                            <i class="bi bi-chevron-down float-end"></i>
+                        </a>
+                        <div class="collapse" id="laporanSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a href="export-excel.html" class="sidebar-link">
+                                        <i class="bi bi-file-earmark-excel me-2"></i> Ekspor Excel
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="export-pdf.html" class="sidebar-link">
+                                        <i class="bi bi-file-earmark-pdf me-2"></i> Ekspor PDF
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="sidebar-link">
+                            <i class="bi bi-box-arrow-right me-2"></i> Keluar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <div class="container mt-4">
+                    <h2>Dashboard</h2>
+                    <div class="row mt-4">
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Karyawan</h5>
+                                    <p class="card-text display-4">150</p>
+                                    <i class="bi bi-people-fill position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hadir Hari Ini</h5>
+                                    <p class="card-text display-4">145</p>
+                                    <i class="bi bi-person-check-fill position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Izin/Sakit</h5>
+                                    <p class="card-text display-4">3</p>
+                                    <i class="bi bi-person-dash-fill position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-danger text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tidak Hadir</h5>
+                                    <p class="card-text display-4">2</p>
+                                    <i class="bi bi-person-x-fill position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Gaji Bulan Ini</h5>
+                                    <p class="card-text display-4">Rp 150M</p>
+                                    <i class="bi bi-cash-stack position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-secondary text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gaji Sudah Dibayar</h5>
+                                    <p class="card-text display-4">145</p>
+                                    <i class="bi bi-check-circle-fill position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gaji Belum Dibayar</h5>
+                                    <p class="card-text display-4">5</p>
+                                    <i class="bi bi-exclamation-circle-fill position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Bonus</h5>
+                                    <p class="card-text display-4">Rp 15M</p>
+                                    <i class="bi bi-gift-fill position-absolute top-50 end-0 me-3 opacity-50" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grafik dan Tabel -->
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grafik Kehadiran Mingguan</h5>
+                                    <canvas id="attendanceChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aktivitas Terbaru</h5>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tanggal</th>
+                                                    <th>Nama</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2024-11-01</td>
+                                                    <td>Ajid</td>
+                                                    <td><span class="badge bg-success">Hadir</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2024-12-01</td>
+                                                    <td>Kunday</td>
+                                                    <td><span class="badge bg-warning">Izin</span></td>
+                                                </tr>
+                                                <!-- Tambahkan baris sesuai kebutuhan -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Toggle Sidebar
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+            document.querySelector('.main-content').classList.toggle('expanded');
+        }
+
+        // Grafik Kehadiran
+        const ctx = document.getElementById('attendanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
+                datasets: [{
+                    label: 'Kehadiran',
+                    data: [145, 142, 147, 144, 143, 140, 138],
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
